@@ -7,8 +7,8 @@ import pandas as pd
 
 log = logging.getLogger(__name__)
 router = APIRouter()
-log_reg = joblib.load('app/api/log_reg.joblib')
-print('pickle model loaded!')
+#log_reg = joblib.load('app/api/log_reg.joblib')
+#print('pickle model loaded!')
 
 @router.get('/random')
 def predict():
