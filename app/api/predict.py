@@ -1,6 +1,5 @@
 import logging
 import random
-import joblib 
 
 from fastapi import APIRouter
 import pandas as pd
