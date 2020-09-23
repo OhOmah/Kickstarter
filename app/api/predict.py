@@ -23,7 +23,7 @@ df = pd.read_csv('app/cleaned_kickstarter_data.csv')
 
 @router.post('/predict')
 def predict(user_input: Dict):
-    user_input = create_df(user_input)
+    user_input1 = create_df(user_input)
     """Returns a random true or false value"""
     train, test = train_test_split(df, train_size=0.80, test_size=0.20, 
                                     stratify=df['project_success'], random_state=42)
@@ -73,10 +73,10 @@ def predict(user_input: Dict):
     # print(y_test.head())
     # print(y_test.iloc[[0]])
 
-    if lrmodel.predict(user_input) == 1:
-        return 'Your Kickstarter project is likely to succeed!'
+    if lrmodel.predict(user_input1) == 1:
+        return user_input, print('Your Kickstarter project is likely to succeed!')
     else:
-        return 'Your Kickstarter project is likely to fail.'
+        return user_input, print('Your Kickstarter project is likely to fail.')
 
 def create_df(web_in):
     '''Takes incoming dictionaries and turns it into a pandas dataframe'''
