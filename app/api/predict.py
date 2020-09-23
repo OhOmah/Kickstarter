@@ -74,9 +74,11 @@ def predict(user_input: Dict):
     # print(y_test.iloc[[0]])
 
     if lrmodel.predict(user_input1) == 1:
-        return user_input, print('Your Kickstarter project is likely to succeed!')
+        predict = 'Your Kickstarter project is likely to succeed!'
+        return user_input, predict
     else:
-        return user_input, print('Your Kickstarter project is likely to fail.')
+        predict = 'Your Kickstarter project is likely to fail.'
+        return user_input, predict
 
 def create_df(web_in):
     '''Takes incoming dictionaries and turns it into a pandas dataframe'''
