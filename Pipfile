@@ -17,6 +17,8 @@ pandas = "*"
 uvicorn = "*"
 plotly = "*"
 vaderSentiment = "*"
+Sklearn = "*"
+category_encoders = "*"
 
 [requires]
 python_version = "3.7"
