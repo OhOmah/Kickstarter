@@ -1,3 +1,5 @@
+!pip install vaderSentiment
+
 import logging
 import random
 import pandas as pd
