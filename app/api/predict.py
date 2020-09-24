@@ -21,6 +21,19 @@ router = APIRouter()
 #print('pickle model loaded!')
 df = pd.read_csv('app/cleaned_kickstarter_data.csv')
 
+class Item(BaseModel):
+    ''' using this data model to parse the request body JSON.'''
+''' "name": "terrible MegaBuster from Megaman X","goal": 10000,
+        "launched": "2015-08-11",
+        "deadline": "2015-08-18",
+        "backers":21,
+        "main_category": 11,
+        "username": "LoginID"'''
+    x1: str = Field(..., example="terrible Megabuster from Megaman X")
+    x2: int = Field(..., example=10000)
+    x3: str = Field(..., example="2015-08-11")
+    x4: 
+
 @router.post('/predict')
 def predict(user_input: Dict):
     user_input1 = create_df(user_input)
