@@ -13,6 +13,7 @@ from sklearn.linear_model import LogisticRegressionCV
 from sklearn.preprocessing import StandardScaler
 from sklearn.pipeline import Pipeline
 from category_encoders import OneHotEncoder, OrdinalEncoder
+from pydantic import Field
 
 
 log = logging.getLogger(__name__)
@@ -21,9 +22,9 @@ router = APIRouter()
 #print('pickle model loaded!')
 df = pd.read_csv('app/cleaned_kickstarter_data.csv')
 
-class Item(BaseModel):
+class Item(predict):
     ''' using this data model to parse the request body JSON.'''
-''' "name": "terrible MegaBuster from Megaman X","goal": 10000,
+    ''' "name": "terrible MegaBuster from Megaman X","goal": 10000,
         "launched": "2015-08-11",
         "deadline": "2015-08-18",
         "backers":21,
