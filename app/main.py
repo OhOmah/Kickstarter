@@ -7,12 +7,13 @@ from app.api import predict, viz
 app = FastAPI(
     title='Kickstarter API',
     description='Basic API to Predict Kick Starter success',
-    version='0.1',
+    version='0.2.6',
     docs_url='/',
 )
 
 app.include_router(predict.router)
-app.include_router(viz.router)
+app.include_router(vizbacker.router)
+app.include_router(vizgoal.router)
 
 app.add_middleware(
     CORSMiddleware,
