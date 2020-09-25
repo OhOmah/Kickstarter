@@ -2,8 +2,10 @@ from fastapi import APIRouter, HTTPException
 import pandas as pd
 import plotly.express as px
 import numpy as np
+import logging
 import plotly.graph_objects as go
 
+log = logging.getLogger(__name__)
 router = APIRouter()
 
 
